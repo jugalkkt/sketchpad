@@ -11,6 +11,16 @@ document.addEventListener('DOMContentLoaded', function()
             gridItem.style.top = j*100 + "px";
             gridItem.classList.add('gridItem')
             container.appendChild(gridItem);
+            gridItem.addEventListener( 'mouseenter', function()
+            {
+                this.style.backgroundColor = 'blue';
+            }
+            )
+            gridItem.addEventListener( 'mouseleave', function()
+            {
+                this.style.backgroundColor = '';
+            }
+            )
         }
     }
 })
