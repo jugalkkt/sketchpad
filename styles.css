@@ -1,11 +1,11 @@
 .gridItem
 {
+    display: flex;
     box-sizing: border-box;
-    width: 100px;
-    height: 100px;
+    flex: 1 0 100px;
+    width: 100%;
     border: 1px solid black;
     padding: 0%;
-    position: absolute;
 }
 body 
 {
@@ -14,8 +14,10 @@ body
 }
 .container 
 {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    width: 1600px; 
+    max-width: 1600px; 
     height: 1600px; 
     border: 1px solid black;
 }
