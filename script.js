@@ -1,6 +1,6 @@
 let container = document.querySelector('.container');
-let rows = 16; let cols = 16;
 let numGrid = prompt("Enter number of grids: ");
+const GRIDSIZE = 900;
 document.addEventListener('DOMContentLoaded', function()
 {
     for (let i = 0; i < numGrid; i++) 
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function()
         for (let j = 0; j < numGrid; j++)
         {
             let gridItem = document.createElement('div');
+            gridItem.style.width = gridItem.style.height = `${(GRIDSIZE / numGrid) - 2}px`;
             gridItem.style.left = i*100 + "px";
             gridItem.style.top = j*100 + "px";
             gridItem.classList.add('gridItem')
