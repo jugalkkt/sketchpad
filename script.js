@@ -2,6 +2,9 @@ let container = document.querySelector('.container');
 let numGrid = prompt("Enter number of grids: ");
 if (numGrid > 100) numGrid = 100;
 const GRIDSIZE = 900;
+const containerRect = container.getBoundingClientRect();
+const containerStartX = containerRect.left;
+const containerStartY = containerRect.top;
 document.addEventListener('DOMContentLoaded', function()
 {
     for (let i = 0; i < numGrid; i++) 
@@ -12,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function()
             let gridSizePx = (GRIDSIZE / numGrid);
             gridItem.style.width = `${gridSizePx}` + 'px';
             gridItem.style.height = `${gridSizePx}` + 'px';
-            gridItem.style.left = `${(i * gridSizePx)}` + 'px';
-            gridItem.style.top = `${(j * gridSizePx)}` + 'px';
+            gridItem.style.left = `${(i * gridSizePx) + containerStartX}` + 'px';
+            gridItem.style.top = `${(j * gridSizePx) + containerStartY}` + 'px';
             gridItem.classList.add('gridItem')
             container.appendChild(gridItem);
             gridItem.addEventListener( 'mouseenter', function()

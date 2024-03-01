@@ -25,6 +25,7 @@ body
     border: 10px solid purple;
     /* margin: 20px auto; */
     align-content: flex-start;
+    box-sizing:border-box
 
 }
 .container-wrapper
@@ -34,4 +35,6 @@ body
     align-items: center;
     height: 100vh;
     width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
