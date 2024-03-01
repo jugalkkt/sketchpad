@@ -1,12 +1,19 @@
-let container = document.querySelector('.container');
-let numGrid = prompt("Enter number of grids: ");
-if (numGrid > 100) numGrid = 100;
-const GRIDSIZE = 900;
-const containerRect = container.getBoundingClientRect();
-const containerStartX = containerRect.left;
-const containerStartY = containerRect.top;
-document.addEventListener('DOMContentLoaded', function()
+let isGridGenerated = false;
+function toggleGrid()
 {
+    clearGrid();
+    generateGrid();
+}
+
+function generateGrid()
+{
+    let container = document.querySelector('.container');
+    let numGrid = prompt("Enter number of grids: ");
+    if (numGrid > 100) numGrid = 100;
+    const GRIDSIZE = 900;
+    const containerRect = container.getBoundingClientRect();
+    const containerStartX = containerRect.left;
+    const containerStartY = containerRect.top;
     for (let i = 0; i < numGrid; i++) 
     {
         for (let j = 0; j < numGrid; j++)
@@ -31,4 +38,13 @@ document.addEventListener('DOMContentLoaded', function()
             )
         }
     }
-})
+}
+function clearGrid()
+{
+    let container = document.querySelector('.container');
+    container.innerHTML = '';
+}
+let btn = document.querySelector('button');
+btn.onclick = toggleGrid;
+
+
